@@ -75,6 +75,7 @@ main{max-width:880px;margin:0 auto;padding:16px 24px 40px}
 .timed .meal-label time{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;line-height:1;font-weight:500;color:var(--accent)}
 .timed .meal-label span{font-size:.95rem;color:var(--ink);font-weight:500}
 .timed.std{border-left-color:var(--line)}
+.timed .meal-label + .dish{margin-top:6px}
 .reason{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
 .reason strong{color:var(--ink);font-weight:500}
 .dish{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.65rem;font-weight:500;line-height:1.15;margin:0 0 6px}
@@ -112,10 +113,8 @@ footer p{margin:4px 0}
 </header>
 
 <section class="notes" aria-label="Good to know">
-  <div class="note">All meals included. All desserts are vegan.</div>
-  <div class="note">Fresh juice served nightly with dinner.</div>
   <div class="note">Protein rotation: chicken, beef and fresh fish throughout the week.</div>
-  <div class="note">Pescatarian option prepared on request for every meal. Vegan alternatives on request.</div>
+  <div class="note">Pescatarian option prepared on request for every meal.</div>
   <div class="note">Early coffee, tea and seasonal fruit available daily from 7:00.</div>
   <div class="note">This menu is prepared almond free for the group.</div>
 </section>
@@ -147,8 +146,8 @@ footer p{margin:4px 0}
         <p class="desc">Gallo pinto, eggs your way, sweet plantain, natilla, white cheese, avocado, corn tortillas and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf coffee · Tea selection</p>
       </article>
-      <article>
-        <p class="meal-label">Dinner</p>
+      <article class="timed std">
+        <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Mexican Taco Bar</h3>
         <p class="desc">Grilled fresh catch with chile lime adobo, corn tortillas, guacamole, pico de gallo, pickled onion, smoked black beans and white rice</p>
         <p class="drinks">Watermelon lime agua fresca · Coconut flan</p>
@@ -169,13 +168,13 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
-      <article>
-        <p class="meal-label">Lunch</p>
+      <article class="timed std">
+        <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Catch of the Day</h3>
         <p class="desc">Grilled fresh catch, grilled vegetables, gallo pinto, ripe plantain and white cheese</p>
       </article>
-      <article>
-        <p class="meal-label">Dinner</p>
+      <article class="timed std">
+        <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Mediterranean</h3>
         <p class="desc">Mezze of hummus and baba ganoush, herb crusted chicken with lemon, garlic and oregano, roasted vegetables and quinoa</p>
         <p class="drinks">Pineapple mint juice · Coconut vanilla cake with berry flambé</p>
@@ -197,14 +196,14 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
-      <article>
-        <p class="meal-label">Lunch</p>
+      <article class="timed std">
+        <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Greek Chicken Bowl</h3>
         <p class="desc">Quinoa, grilled chicken, feta, tzatziki, grilled vegetables and green salad</p>
         <p class="drinks">Hibiscus juice</p>
       </article>
-      <article>
-        <p class="meal-label">Dinner</p>
+      <article class="timed std">
+        <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Grilled Fresh Catch</h3>
         <p class="desc">Fresh catch of the day with lemon, garlic and herbs, jasmine rice, tabbouleh and green salad</p>
         <p class="drinks">Lemonade · Chocolate mousse</p>
@@ -226,14 +225,14 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
-      <article>
-        <p class="meal-label">Lunch</p>
+      <article class="timed std">
+        <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Tabbouleh &amp; Falafel Salad</h3>
         <p class="desc">Fresh tabbouleh, crispy falafel, cucumber, tomato, avocado, carrot and lemon tahini dressing</p>
         <p class="drinks">Passion fruit juice</p>
       </article>
-      <article>
-        <p class="meal-label">Dinner</p>
+      <article class="timed std">
+        <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Thai Coconut Curry</h3>
         <p class="desc">Slow braised beef in lemongrass coconut milk, jasmine rice and roasted kabocha squash</p>
         <p class="drinks">Lemongrass ginger cooler · Mango with coconut sticky rice</p>
@@ -254,14 +253,14 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
-      <article>
-        <p class="meal-label">Lunch</p>
+      <article class="timed std">
+        <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Fresh Catch Poke Bowl</h3>
         <p class="desc">Sushi rice, fresh catch of the day, mango, cucumber, edamame, avocado and soy sesame dressing</p>
         <p class="drinks">Hibiscus juice</p>
       </article>
-      <article>
-        <p class="meal-label">Dinner</p>
+      <article class="timed std">
+        <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Pad Thai</h3>
         <p class="desc">Brown rice noodles with roasted broccoli, carrot, pepper and sprouts, grilled chicken with tamarind lime glaze, toasted peanuts, sesame and chile flakes</p>
         <p class="drinks">Watermelon strawberry juice · Coconut panna cotta with tropical fruit</p>
