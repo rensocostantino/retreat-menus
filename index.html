@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soul Adventure Retreat · Menu · re:center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#2F3B2C; --gold:#B8945F; --cream:#F4F1E9;
+  --bg:#F4F1E9; --surface:#FBF9F4; --ink:#2F3B2C; --muted:#6E7268; --soft:#8E8A7E;
+  --line:#DCD5C6; --accent:#9A7845; --hero-bg:#2F3B2C; --hero-ink:#F4F1E9; --hero-soft:#C9C3B3;
+  --chip-bg:#EAE2D2;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1D241B; --surface:#242C22; --ink:#ECE7DB; --muted:#B4B2A6; --soft:#8F8D82;
+    --line:#3A4436; --accent:#CFAE7A; --hero-bg:#141A13; --hero-ink:#F4F1E9; --hero-soft:#A9A496;
+    --chip-bg:#323B2F; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1D241B; --surface:#242C22; --ink:#ECE7DB; --muted:#B4B2A6; --soft:#8F8D82;
+  --line:#3A4436; --accent:#CFAE7A; --hero-bg:#141A13; --hero-ink:#F4F1E9; --hero-soft:#A9A496;
+  --chip-bg:#323B2F; color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
+
+/* Hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding:72px 24px 64px;text-align:center}
+.brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.25rem;letter-spacing:.02em;color:var(--gold);margin:0 0 28px}
+.hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1;margin:0}
+.hero .sub{font-size:1rem;color:var(--hero-soft);margin:18px 0 0}
+.hero .dates{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.35rem;color:var(--hero-ink);margin:6px 0 0}
+
+/* Notes */
+.notes{max-width:880px;margin:0 auto;padding:40px 24px 8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 32px}
+.note{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:var(--muted)}
+.note::before{content:"";flex:0 0 6px;height:6px;margin-top:.6em;border-radius:50%;background:var(--gold)}
+
+/* Day nav */
+.daynav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-top:32px}
+.daynav ul{list-style:none;margin:0 auto;padding:10px 16px;max-width:880px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.daynav ul::-webkit-scrollbar{display:none}
+.daynav a{display:block;white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.9rem;padding:7px 14px;border-radius:999px;border:1px solid transparent}
+.daynav a:hover{color:var(--ink);border-color:var(--line)}
+.daynav a.active{background:var(--ink);color:var(--bg)}
+.daynav a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* Days */
+main{max-width:880px;margin:0 auto;padding:16px 24px 40px}
+.day{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:44px 0;border-bottom:1px solid var(--line)}
+.day:last-child{border-bottom:0}
+.dayhead{position:relative}
+.num{font-family:"Cormorant Garamond",Georgia,serif;font-size:5rem;line-height:.85;color:var(--accent);font-weight:400}
+.dname{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.4rem;margin:10px 0 0}
+.dmonth{font-size:.85rem;color:var(--soft);margin:0}
+.chip{display:inline-block;margin-top:12px;font-size:.78rem;padding:4px 11px;border-radius:999px;background:var(--chip-bg);color:var(--ink)}
+.meals{display:flex;flex-direction:column;gap:30px}
+.meal-label{font-size:.82rem;color:var(--soft);margin:0 0 4px;display:flex;gap:10px;align-items:baseline}
+.meal-label time{color:var(--accent);font-weight:500}
+.timed{border-left:3px solid var(--gold);padding:4px 0 4px 18px}
+.timed .meal-label{align-items:center;gap:14px;margin-bottom:2px}
+.timed .meal-label time{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;line-height:1;font-weight:500;color:var(--accent)}
+.timed .meal-label span{font-size:.95rem;color:var(--ink);font-weight:500}
+.timed.std{border-left-color:var(--line)}
+.reason{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+.reason strong{color:var(--ink);font-weight:500}
+.dish{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.65rem;font-weight:500;line-height:1.15;margin:0 0 6px}
+.desc{margin:0;color:var(--muted);font-size:.95rem;max-width:62ch}
+.drinks{margin:8px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.08rem;color:var(--accent)}
+
+footer{text-align:center;padding:40px 24px 64px;color:var(--soft);font-size:.88rem;border-top:1px solid var(--line)}
+footer .tag{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.5rem;color:var(--ink);margin:0 0 10px}
+footer p{margin:4px 0}
+
+@media (max-width:640px){
+  .hero{padding:56px 20px 48px}
+  main{padding:8px 20px 32px}
+  .day{grid-template-columns:1fr;gap:18px;padding:36px 0}
+  .dayhead{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+  .num{font-size:3.6rem}
+  .dname{margin:0}
+  .chip{margin-top:0}
+  .dish{font-size:1.45rem}
+}
+@media print{
+  .daynav{display:none}
+  .hero{padding:32px}
+  .day{break-inside:avoid;padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="brand">re:center</p>
+  <h1>Soul Adventure Retreat</h1>
+  <p class="sub">Retreat menu</p>
+  <p class="dates">November 1 to 6, 2026 · Santa Teresa, Costa Rica</p>
+</header>
+
+<section class="notes" aria-label="Good to know">
+  <div class="note">All meals included. All desserts are vegan.</div>
+  <div class="note">Fresh juice served nightly with dinner.</div>
+  <div class="note">Protein rotation: chicken, beef and fresh fish throughout the week.</div>
+  <div class="note">Pescatarian option prepared on request for every meal. Vegan alternatives on request.</div>
+  <div class="note">Early coffee, tea and seasonal fruit available daily from 7:00.</div>
+  <div class="note">This menu is prepared almond free for the group.</div>
+</section>
+
+<nav class="daynav" aria-label="Days">
+  <ul>
+    <li><a href="#d1">Sun 1</a></li>
+    <li><a href="#d2">Mon 2</a></li>
+    <li><a href="#d3">Tue 3</a></li>
+    <li><a href="#d4">Wed 4</a></li>
+    <li><a href="#d5">Thu 5</a></li>
+    <li><a href="#d6">Fri 6</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section class="day" id="d1">
+    <div class="dayhead">
+      <div class="num">1</div>
+      <div><p class="dname">Sunday</p><p class="dmonth">November</p></div>
+      <span class="chip">Arrival</span>
+    </div>
+    <div class="meals">
+      <article class="timed">
+        <p class="meal-label"><time>12:00</time><span>Arrival brunch</span></p>
+        <p class="reason">Ready for the group <strong>as you arrive</strong> from the morning flight</p>
+        <h3 class="dish">Costa Rican Brunch</h3>
+        <p class="desc">Gallo pinto, eggs your way, sweet plantain, natilla, white cheese, avocado, corn tortillas and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf coffee · Tea selection</p>
+      </article>
+      <article>
+        <p class="meal-label">Dinner</p>
+        <h3 class="dish">Mexican Taco Bar</h3>
+        <p class="desc">Grilled fresh catch with chile lime adobo, corn tortillas, guacamole, pico de gallo, pickled onion, smoked black beans and white rice</p>
+        <p class="drinks">Watermelon lime agua fresca · Coconut flan</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="d2">
+    <div class="dayhead">
+      <div class="num">2</div>
+      <div><p class="dname">Monday</p><p class="dmonth">November</p></div>
+    </div>
+    <div class="meals">
+      <article class="timed std">
+        <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
+        <p class="reason">After the morning yoga class</p>
+        <h3 class="dish">Eggs, Avocado Toast &amp; Overnight Oats</h3>
+        <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
+      </article>
+      <article>
+        <p class="meal-label">Lunch</p>
+        <h3 class="dish">Catch of the Day</h3>
+        <p class="desc">Grilled fresh catch, grilled vegetables, gallo pinto, ripe plantain and white cheese</p>
+      </article>
+      <article>
+        <p class="meal-label">Dinner</p>
+        <h3 class="dish">Mediterranean</h3>
+        <p class="desc">Mezze of hummus and baba ganoush, herb crusted chicken with lemon, garlic and oregano, roasted vegetables and quinoa</p>
+        <p class="drinks">Pineapple mint juice · Coconut vanilla cake with berry flambé</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="d3">
+    <div class="dayhead">
+      <div class="num">3</div>
+      <div><p class="dname">Tuesday</p><p class="dmonth">November</p></div>
+      <span class="chip">Surf lesson · 9:30</span>
+    </div>
+    <div class="meals">
+      <article class="timed">
+        <p class="meal-label"><time>8:00</time><span>Early breakfast</span></p>
+        <p class="reason">Served early so everyone is ready for the <strong>surf lesson at 9:30</strong></p>
+        <h3 class="dish">Eggs, Gallo Pinto &amp; Energy Balls</h3>
+        <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
+      </article>
+      <article>
+        <p class="meal-label">Lunch</p>
+        <h3 class="dish">Greek Chicken Bowl</h3>
+        <p class="desc">Quinoa, grilled chicken, feta, tzatziki, grilled vegetables and green salad</p>
+        <p class="drinks">Hibiscus juice</p>
+      </article>
+      <article>
+        <p class="meal-label">Dinner</p>
+        <h3 class="dish">Grilled Fresh Catch</h3>
+        <p class="desc">Fresh catch of the day with lemon, garlic and herbs, jasmine rice, tabbouleh and green salad</p>
+        <p class="drinks">Lemonade · Chocolate mousse</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="d4">
+    <div class="dayhead">
+      <div class="num">4</div>
+      <div><p class="dname">Wednesday</p><p class="dmonth">November</p></div>
+      <span class="chip">ATV waterfall tour</span>
+    </div>
+    <div class="meals">
+      <article class="timed">
+        <p class="meal-label"><time>8:00</time><span>Early breakfast</span></p>
+        <p class="reason">Served early so the group can head out on the <strong>ATV tour to the Montezuma waterfalls</strong> right after</p>
+        <h3 class="dish">Eggs, Avocado Toast &amp; Overnight Oats</h3>
+        <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
+      </article>
+      <article>
+        <p class="meal-label">Lunch</p>
+        <h3 class="dish">Tabbouleh &amp; Falafel Salad</h3>
+        <p class="desc">Fresh tabbouleh, crispy falafel, cucumber, tomato, avocado, carrot and lemon tahini dressing</p>
+        <p class="drinks">Passion fruit juice</p>
+      </article>
+      <article>
+        <p class="meal-label">Dinner</p>
+        <h3 class="dish">Thai Coconut Curry</h3>
+        <p class="desc">Slow braised beef in lemongrass coconut milk, jasmine rice and roasted kabocha squash</p>
+        <p class="drinks">Lemongrass ginger cooler · Mango with coconut sticky rice</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="d5">
+    <div class="dayhead">
+      <div class="num">5</div>
+      <div><p class="dname">Thursday</p><p class="dmonth">November</p></div>
+    </div>
+    <div class="meals">
+      <article class="timed std">
+        <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
+        <p class="reason">After the morning yoga class</p>
+        <h3 class="dish">Eggs, Gallo Pinto &amp; Energy Balls</h3>
+        <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
+      </article>
+      <article>
+        <p class="meal-label">Lunch</p>
+        <h3 class="dish">Fresh Catch Poke Bowl</h3>
+        <p class="desc">Sushi rice, fresh catch of the day, mango, cucumber, edamame, avocado and soy sesame dressing</p>
+        <p class="drinks">Hibiscus juice</p>
+      </article>
+      <article>
+        <p class="meal-label">Dinner</p>
+        <h3 class="dish">Pad Thai</h3>
+        <p class="desc">Brown rice noodles with roasted broccoli, carrot, pepper and sprouts, grilled chicken with tamarind lime glaze, toasted peanuts, sesame and chile flakes</p>
+        <p class="drinks">Watermelon strawberry juice · Coconut panna cotta with tropical fruit</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="d6">
+    <div class="dayhead">
+      <div class="num">6</div>
+      <div><p class="dname">Friday</p><p class="dmonth">November</p></div>
+      <span class="chip">Departure</span>
+    </div>
+    <div class="meals">
+      <article class="timed std">
+        <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
+        <p class="reason">After the morning yoga class</p>
+        <h3 class="dish">Continental Breakfast</h3>
+        <p class="desc">Avocado toast on sourdough, eggs your way, Greek and coconut yogurt, house jams and seasonal fruit</p>
+        <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="tag">come back to balance</p>
+  <p>All dietary restrictions accommodated with advance notice. Please speak with our kitchen team upon arrival.</p>
+  <p>re:center · Santa Teresa, Costa Rica · recenterlife.com</p>
+</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.daynav a'));
+  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('active');});
+        var a=map[e.target.id]; if(a){a.classList.add('active'); a.scrollIntoView({block:'nearest',inline:'nearest'});}
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('.day').forEach(function(s){io.observe(s);});
+})();
+</script>
+</body>
+</html>
