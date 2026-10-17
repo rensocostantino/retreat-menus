@@ -13,6 +13,7 @@
   --bg:#F4F1E9; --surface:#FBF9F4; --ink:#2F3B2C; --muted:#6E7268; --soft:#8E8A7E;
   --line:#DCD5C6; --accent:#9A7845; --hero-bg:#2F3B2C; --hero-ink:#F4F1E9; --hero-soft:#C9C3B3;
   --chip-bg:#EAE2D2;
+  --hero-tint-a:rgba(47,59,44,.74); --hero-tint-b:rgba(47,59,44,.86);
   color-scheme: light;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -22,13 +23,13 @@
   :root:not([data-theme="light"]){
     --bg:#1D241B; --surface:#242C22; --ink:#ECE7DB; --muted:#B4B2A6; --soft:#8F8D82;
     --line:#3A4436; --accent:#CFAE7A; --hero-bg:#141A13; --hero-ink:#F4F1E9; --hero-soft:#A9A496;
-    --chip-bg:#323B2F; color-scheme: dark;
+    --chip-bg:#323B2F; --hero-tint-a:rgba(20,26,19,.78); --hero-tint-b:rgba(20,26,19,.9); color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#1D241B; --surface:#242C22; --ink:#ECE7DB; --muted:#B4B2A6; --soft:#8F8D82;
   --line:#3A4436; --accent:#CFAE7A; --hero-bg:#141A13; --hero-ink:#F4F1E9; --hero-soft:#A9A496;
-  --chip-bg:#323B2F; color-scheme: dark;
+  --chip-bg:#323B2F; --hero-tint-a:rgba(20,26,19,.78); --hero-tint-b:rgba(20,26,19,.9); color-scheme: dark;
 }
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
@@ -38,7 +39,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .serif{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif}
 
 /* Hero */
-.hero{background:var(--hero-bg);color:var(--hero-ink);padding:72px 24px 64px;text-align:center}
+.hero{background-color:var(--hero-bg);background-image:linear-gradient(var(--hero-tint-a),var(--hero-tint-b)),url("hero.webp");background-size:cover;background-position:center;color:var(--hero-ink);padding:96px 24px 88px;text-align:center}
 .brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.25rem;letter-spacing:.02em;color:var(--gold);margin:0 0 28px}
 .hero h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-style:italic;font-size:clamp(2.6rem,8vw,4.6rem);line-height:1;margin:0}
 .hero .sub{font-size:1rem;color:var(--hero-soft);margin:18px 0 0}
@@ -87,7 +88,7 @@ footer .tag{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;fon
 footer p{margin:4px 0}
 
 @media (max-width:640px){
-  .hero{padding:56px 20px 48px}
+  .hero{padding:72px 20px 64px}
   main{padding:8px 20px 32px}
   .day{grid-template-columns:1fr;gap:18px;padding:36px 0}
   .dayhead{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
