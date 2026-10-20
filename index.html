@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Soul Adventure Retreat · Menu · re:center</title>
+<title>Soul Adventure Retreat · Menu &amp; Schedule · re:center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -83,6 +83,10 @@ main{max-width:880px;margin:0 auto;padding:16px 24px 40px}
 .desc{margin:0;color:var(--muted);font-size:.95rem;max-width:62ch}
 .drinks{margin:8px 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.08rem;color:var(--accent)}
 
+.act{display:flex;gap:14px;align-items:baseline;padding:2px 0 2px 21px;margin:-12px 0}
+.act time{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.25rem;font-weight:500;color:var(--accent);min-width:3.2em}
+.act span{font-size:.92rem;color:var(--muted)}
+.act span strong{color:var(--ink);font-weight:500}
 footer{text-align:center;padding:40px 24px 64px;color:var(--soft);font-size:.88rem;border-top:1px solid var(--line)}
 footer .tag{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:1.5rem;color:var(--ink);margin:0 0 10px}
 footer p{margin:4px 0}
@@ -109,14 +113,14 @@ footer p{margin:4px 0}
 <header class="hero">
   <p class="brand">re:center</p>
   <h1>Soul Adventure Retreat</h1>
-  <p class="sub">Retreat menu</p>
+  <p class="sub">Retreat menu &amp; daily schedule</p>
   <p class="dates">November 1 to 6, 2026 · Santa Teresa, Costa Rica</p>
 </header>
 
 <section class="notes" aria-label="Good to know">
   <div class="note">Protein rotation: chicken, beef and fresh fish throughout the week.</div>
   <div class="note">Pescatarian option prepared on request for every meal.</div>
-  <div class="note">Early coffee, tea and seasonal fruit available daily from 7:00.</div>
+  <div class="note">Early coffee, tea and seasonal fruit available daily from 7:30.</div>
   <div class="note">This menu is prepared almond free for the group.</div>
 </section>
 
@@ -162,6 +166,8 @@ footer p{margin:4px 0}
       <div><p class="dname">Monday</p><p class="dmonth">November</p></div>
     </div>
     <div class="meals">
+      <div class="act"><time>7:30</time><span>Coffee, tea &amp; light fruit</span></div>
+      <div class="act"><time>8:00</time><span><strong>Yoga class</strong></span></div>
       <article class="timed std">
         <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
         <p class="reason">After the morning yoga class</p>
@@ -169,11 +175,14 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
+      <div class="act"><time></time><span>Free time</span></div>
       <article class="timed std">
         <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Catch of the Day</h3>
         <p class="desc">Grilled fresh catch, grilled vegetables, gallo pinto, ripe plantain and white cheese</p>
       </article>
+      <div class="act"><time></time><span>Free time</span></div>
+      <div class="act"><time>17:00</time><span>Yoga, breathwork or workshop</span></div>
       <article class="timed std">
         <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Mediterranean</h3>
@@ -187,22 +196,27 @@ footer p{margin:4px 0}
     <div class="dayhead">
       <div class="num">3</div>
       <div><p class="dname">Tuesday</p><p class="dmonth">November</p></div>
-      <span class="chip">Surf lesson · 9:30</span>
+      <span class="chip">Surf lesson · 10:30</span>
     </div>
     <div class="meals">
-      <article class="timed">
-        <p class="meal-label"><time>8:00</time><span>Early breakfast</span></p>
-        <p class="reason">Served early so everyone is ready for the <strong>surf lesson at 9:30</strong></p>
+      <div class="act"><time>7:30</time><span>Coffee, tea &amp; light fruit</span></div>
+      <div class="act"><time>8:00</time><span><strong>Yoga class</strong></span></div>
+      <article class="timed std">
+        <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
+        <p class="reason">After the morning yoga class</p>
         <h3 class="dish">Eggs, Gallo Pinto &amp; Energy Balls</h3>
         <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
+      <div class="act"><time>10:30</time><span><strong>Surf lesson</strong></span></div>
       <article class="timed std">
         <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Greek Chicken Bowl</h3>
         <p class="desc">Quinoa, grilled chicken, feta, tzatziki, grilled vegetables and green salad</p>
         <p class="drinks">Hibiscus juice</p>
       </article>
+      <div class="act"><time></time><span>Free time</span></div>
+      <div class="act"><time>17:00</time><span>Yoga, breathwork or workshop</span></div>
       <article class="timed std">
         <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Grilled Fresh Catch</h3>
@@ -216,22 +230,27 @@ footer p{margin:4px 0}
     <div class="dayhead">
       <div class="num">4</div>
       <div><p class="dname">Wednesday</p><p class="dmonth">November</p></div>
-      <span class="chip">ATV waterfall tour</span>
+      <span class="chip">ATV waterfall tour · 10:30</span>
     </div>
     <div class="meals">
-      <article class="timed">
-        <p class="meal-label"><time>8:00</time><span>Early breakfast</span></p>
-        <p class="reason">Served early so the group can head out on the <strong>ATV tour to the Montezuma waterfalls</strong> right after</p>
+      <div class="act"><time>7:30</time><span>Coffee, tea &amp; light fruit</span></div>
+      <div class="act"><time>8:00</time><span><strong>Yoga class</strong></span></div>
+      <article class="timed std">
+        <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
+        <p class="reason">After the morning yoga class</p>
         <h3 class="dish">Eggs, Avocado Toast &amp; Overnight Oats</h3>
         <p class="desc">Eggs scrambled, fried or as a frittata, avocado toast on sourdough, overnight oats and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
+      <div class="act"><time>10:30</time><span><strong>ATV tour to the Montezuma waterfalls</strong>, 5 to 6 hours</span></div>
       <article class="timed std">
-        <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
+        <p class="meal-label"><time>To go</time><span>Lunch box</span></p>
+        <p class="reason">Packed for the group to enjoy during the <strong>ATV tour</strong></p>
         <h3 class="dish">Tabbouleh &amp; Falafel Salad</h3>
         <p class="desc">Fresh tabbouleh, crispy falafel, cucumber, tomato, avocado, carrot and lemon tahini dressing</p>
         <p class="drinks">Passion fruit juice</p>
       </article>
+      <div class="act"><time>17:00</time><span>Yoga, breathwork or workshop</span></div>
       <article class="timed std">
         <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Thai Coconut Curry</h3>
@@ -247,6 +266,8 @@ footer p{margin:4px 0}
       <div><p class="dname">Thursday</p><p class="dmonth">November</p></div>
     </div>
     <div class="meals">
+      <div class="act"><time>7:30</time><span>Coffee, tea &amp; light fruit</span></div>
+      <div class="act"><time>8:00</time><span><strong>Yoga class</strong></span></div>
       <article class="timed std">
         <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
         <p class="reason">After the morning yoga class</p>
@@ -254,12 +275,15 @@ footer p{margin:4px 0}
         <p class="desc">Eggs scrambled, fried or as a frittata, gallo pinto, energy balls and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
+      <div class="act"><time></time><span>Free time</span></div>
       <article class="timed std">
         <p class="meal-label"><time>13:00</time><span>Lunch</span></p>
         <h3 class="dish">Fresh Catch Poke Bowl</h3>
         <p class="desc">Sushi rice, fresh catch of the day, mango, cucumber, edamame, avocado and soy sesame dressing</p>
         <p class="drinks">Hibiscus juice</p>
       </article>
+      <div class="act"><time></time><span>Free time</span></div>
+      <div class="act"><time>17:00</time><span>Yoga, breathwork or workshop</span></div>
       <article class="timed std">
         <p class="meal-label"><time>18:30</time><span>Dinner</span></p>
         <h3 class="dish">Pad Thai</h3>
@@ -276,6 +300,8 @@ footer p{margin:4px 0}
       <span class="chip">Departure</span>
     </div>
     <div class="meals">
+      <div class="act"><time>7:30</time><span>Coffee, tea &amp; light fruit</span></div>
+      <div class="act"><time>8:00</time><span><strong>Yoga class</strong></span></div>
       <article class="timed std">
         <p class="meal-label"><time>9:30</time><span>Breakfast</span></p>
         <p class="reason">After the morning yoga class</p>
@@ -283,6 +309,7 @@ footer p{margin:4px 0}
         <p class="desc">Avocado toast on sourdough, eggs your way, Greek and coconut yogurt, house jams and seasonal fruit</p>
         <p class="drinks">Natural flavored waters · Coffee · Decaf · Tea · Oat &amp; coconut milk · Non dairy creamers</p>
       </article>
+      <div class="act"><time></time><span>Check out &amp; departure</span></div>
     </div>
   </section>
 
